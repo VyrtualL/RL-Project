@@ -7,10 +7,10 @@ import joblib
 import matplotlib.pyplot as plt
 
 mem_size = 50000
-tau = 0.005
+tau = 1000
 lr = 1e-6
 
-total_iter = 1#0000000
+total_iter = 20000000
 nb_iter = total_iter
 i = 0
 

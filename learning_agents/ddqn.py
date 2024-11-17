@@ -21,7 +21,7 @@ class DQLModel(Module):
 
     def forward(self, x):
         res = self.first_conv(x)
-        res = torch.clamp(self.relu(res), min=10, max=18)
+        res = self.relu(res)
         res = self.second_conv(res)
         res = self.relu(res)
         res = res.flatten(start_dim=1)
@@ -149,8 +149,5 @@ class DDQN(Agent):
         self.optimizer.step()
 
         # Update evaluation model
-        model_dict = self.model.state_dict()
-        target_dict = self.target_model.state_dict()
-        for key in target_dict:
-            target_dict[key] = model_dict[key] * self.tau + target_dict[key] * (1 - self.tau)
-        self.target_model.load_state_dict(target_dict)
+        if self.step % self.tau == 0:
+            self.target_model.load_state_dict(self.model.state_dict())
