@@ -4,6 +4,8 @@ Deep Reinforcement Learning project on the Pong game developed by:
 - Juliette Jacquot
 - Matis Braun
 
+## Report
+The report is the pdf `Rapport_RL_Pong_Project.pdf` on Github.
 
 ## Deep Q Learning:
 If you want to use the Deep Q Learning model, you have to launch the `main.py`, which will launch the training on 1,000,000 frames.
@@ -21,3 +23,5 @@ This model theoretically has the best results.
 
 ## Animation
 In the `animation` folder, we can find `best_final_game_ddqn.gif` which shows a game using the best model we had. The model wins with a 19-point lead.
+
+In the `animation` folder, we can find `strange_win.gif` which shows the game where the model managed to win without moving the whole game, which is impressive.
